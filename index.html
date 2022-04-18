@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <base href="https://demos.telerik.com/kendo-ui/panelbar/index?autoRun=true&theme=default-main">
     <style>
         html {
@@ -22,6 +23,9 @@
 <body>
 
     <div id="example">
+        <ul id="menu">
+        </ul>
+        <nav id="breadcrumb"></nav>
         <ul id="panelbar">
             <li class="k-state-active">
                 <span class="k-link k-state-selected">My Teammates</span>
@@ -80,39 +84,38 @@
                 Communication
             </li>
         </ul>
-        <style>
-            #panelbar {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .teamMate h2 {
-                font-size: 1.4em;
-                font-weight: normal;
-                margin-bottom: 0px;
-            }
-
-            .teamMate p {
-                margin: 0;
-            }
-
-            .teamMate img {
-                display: inline-block;
-                margin: 5px 15px 5px 5px;
-                border: 1px solid #ccc;
-                border-radius: 50%;
-            }
-
-            .details {
-                display: inline-block;
-                vertical-align: top;
-            }
-        </style>
         <script>
             $(document).ready(function () {
                 $("#panelbar").kendoPanelBar({
-                    expandMode: "single"
+                    expandMode: "multiple"
                 });
+
+                $("#breadcrumb").kendoBreadcrumb({
+                    bindToLocation: true,
+                    navigational: true
+                });
+
+                var inlineDefault = new kendo.data.HierarchicalDataSource({
+                    data: [
+                        {
+                            text: "Exam-Answer"
+                        },
+                        {
+                            text: "About"
+                        },
+                        {
+                            text: "Contact"
+                        }
+                    ]
+                });
+
+                $(document).ready(function () {
+                    $("#menu").kendoMenu({
+                        dataSource: inlineDefault
+                    });
+                });
+
+
             });
         </script>
     </div>

@@ -10,7 +10,8 @@
         }
     </style>
     <title></title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.412/styles/kendo.default-main.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.412/styles/kendo.default-ocean-blue.min.css" />
+
 
     <script src="https://kendo.cdn.telerik.com/2022.1.412/js/jquery.min.js"></script>
 
@@ -26,10 +27,18 @@
         <ul id="menu">
         </ul>
         <nav id="breadcrumb"></nav>
+
+        <div id="pager"></div>
+
         <ul id="panelbar">
             <li class="k-state-active">
                 <span class="k-link k-state-selected">Question</span>
-                To build the project, load the CSharp.sln solution. Click "Start". This will build glTFLoader_Shared, GeneratorLib, and Generator. It will then run the Generator. The generator reads the .spec files defining the glTF standard and generates a set of classes that will be used as the schema for loading your models. The glTFLoader project can now be built. You will need glTFLoader.dll and glTFLoader_shared.dll in order to use the loader in any subsequent project.
+                <p>To build the project, load the CSharp.sln solution.</p>
+                <p>Click "Start".</p>
+                <p>Click "Start".</p>
+                <p>This will build glTFLoader_Shared, GeneratorLib, and Generator. It will then run the Generator.</p>
+                <p>It will then run the Generator.</p>
+                The generator reads the .spec files defining the glTF standard and generates a set of classes that will be used as the schema for loading your models. The glTFLoader project can now be built. You will need glTFLoader.dll and glTFLoader_shared.dll in order to use the loader in any subsequent project.
             </li>
             <li class="k-state-active">
                 <span class="k-link k-state-selected">Answers</span>
@@ -110,6 +119,30 @@
                     layout: "vertical",
                     value: "Phone (SMS)"
                 });
+
+                var dataSource = new kendo.data.DataSource({
+                    data: [
+                        11,22,33,44
+                    ],
+                    pageSize: 1
+                });
+
+                $("#pager").kendoPager({
+                    change: function (e) {
+                        var index = e.index;
+                        window.location.href = window.location.href + index;
+                        console.log(index);
+                    },
+                    dataSource: dataSource,
+                    messages: {
+                        first: "First question",
+                        next: "Next question",
+                        last: "Last question",
+                        prev: "Prev question",
+                        display: "{0} of {2} questions."
+                    }
+                });
+                dataSource.read();
 
             });
         </script>

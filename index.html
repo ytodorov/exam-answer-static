@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <base href="https://demos.telerik.com/kendo-ui/panelbar/index?autoRun=true&theme=default-main">
+
+    <title></title>
+    <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.412/styles/kendo.default-ocean-blue.min.css" /> -->
     <style>
         html {
-            font-size: 14px;
+            font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
         }
     </style>
-    <title></title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.412/styles/kendo.default-ocean-blue.min.css" />
-
-
+    <link rel="stylesheet" href="css/1.min.css">
     <script src="https://kendo.cdn.telerik.com/2022.1.412/js/jquery.min.js"></script>
 
 
@@ -21,6 +21,7 @@
 
 
 </head>
+
 <body>
 
     <div id="example">
@@ -29,7 +30,14 @@
         <nav id="breadcrumb"></nav>
 
         <div id="pager"></div>
-
+        <a id="iconTextButton" href="http://127.0.0.1:5500/index.html" data-role="button"
+            class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button" role="button"
+            aria-disabled="false" tabindex="0"><span class="k-icon k-i-arrow-60-left k-button-icon"></span><span
+                class="k-button-text">Prev Question</span></a>
+        <a id="iconTextButton" href="http://127.0.0.1:5500/index.html" data-role="button"
+            class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-float-right" type="button" role="button"
+            aria-disabled="false" tabindex="0"><span class="k-button-text">Next Question</span><span
+                class="k-icon k-i-arrow-60-right k-button-icon"></span></a>
         <ul id="panelbar">
             <li class="k-state-active">
                 <span class="k-link k-state-selected">Question</span>
@@ -38,7 +46,9 @@
                 <p>Click "Start".</p>
                 <p>This will build glTFLoader_Shared, GeneratorLib, and Generator. It will then run the Generator.</p>
                 <p>It will then run the Generator.</p>
-                The generator reads the .spec files defining the glTF standard and generates a set of classes that will be used as the schema for loading your models. The glTFLoader project can now be built. You will need glTFLoader.dll and glTFLoader_shared.dll in order to use the loader in any subsequent project.
+                The generator reads the .spec files defining the glTF standard and generates a set of classes that will
+                be used as the schema for loading your models. The glTFLoader project can now be built. You will need
+                glTFLoader.dll and glTFLoader_shared.dll in order to use the loader in any subsequent project.
             </li>
             <li class="k-state-active">
                 <span class="k-link k-state-selected">Answers</span>
@@ -122,27 +132,27 @@
 
                 var dataSource = new kendo.data.DataSource({
                     data: [
-                        11,22,33,44
+                        11, 22, 33, 44
                     ],
                     pageSize: 1
                 });
 
-                $("#pager").kendoPager({
-                    change: function (e) {
-                        var index = e.index;
-                        window.location.href = window.location.href + index;
-                        console.log(index);
-                    },
-                    dataSource: dataSource,
-                    messages: {
-                        first: "First question",
-                        next: "Next question",
-                        last: "Last question",
-                        prev: "Prev question",
-                        display: "{0} of {2} questions."
-                    }
-                });
-                dataSource.read();
+                // $("#pager").kendoPager({
+                //     change: function (e) {
+                //         var index = e.index;
+                //         window.location.href = window.location.href + index;
+                //         console.log(index);
+                //     },
+                //     dataSource: dataSource,
+                //     messages: {
+                //         first: "First question",
+                //         next: "Next question",
+                //         last: "Last question",
+                //         prev: "Prev question",
+                //         display: "{0} of {2} questions."
+                //     }
+                // });
+                // dataSource.read();
 
             });
         </script>
@@ -151,4 +161,5 @@
 
 
 </body>
+
 </html>

@@ -12,7 +12,12 @@
             font-family: Arial, Helvetica, sans-serif;
         }
     </style>
-    <link rel="stylesheet" href="css/1.min.css">
+    <!-- <link rel="stylesheet" href="css/1.min.css"> -->
+
+    <link href="https://cdn.kendostatic.com/2022.1.412/styles/kendo.common-fiori.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdn.kendostatic.com/2022.1.412/styles/kendo.fiori.min.css" rel="stylesheet" type="text/css" />
+
     <script src="https://kendo.cdn.telerik.com/2022.1.412/js/jquery.min.js"></script>
 
 
@@ -25,8 +30,8 @@
 <body>
 
     <div id="example">
-        <ul id="menu">
-        </ul>
+        <!-- <ul id="menu">
+        </ul> -->
         <nav id="breadcrumb"></nav>
 
         <div id="pager"></div>
@@ -35,11 +40,11 @@
             aria-disabled="false" tabindex="0"><span class="k-icon k-i-arrow-60-left k-button-icon"></span><span
                 class="k-button-text">Prev Question</span></a>
         <a id="iconTextButton" href="http://127.0.0.1:5500/index.html" data-role="button"
-            class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-float-right" type="button" role="button"
-            aria-disabled="false" tabindex="0"><span class="k-button-text">Next Question</span><span
+            class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-float-right" type="button"
+            role="button" aria-disabled="false" tabindex="0"><span class="k-button-text">Next Question</span><span
                 class="k-icon k-i-arrow-60-right k-button-icon"></span></a>
         <ul id="panelbar">
-            <li class="k-state-active">
+            <li>
                 <span class="k-link k-state-selected">Question</span>
                 <p>To build the project, load the CSharp.sln solution.</p>
                 <p>Click "Start".</p>
@@ -50,18 +55,18 @@
                 be used as the schema for loading your models. The glTFLoader project can now be built. You will need
                 glTFLoader.dll and glTFLoader_shared.dll in order to use the loader in any subsequent project.
             </li>
-            <li class="k-state-active">
+            <li>
                 <span class="k-link k-state-selected">Answers</span>
                 <ul id="checkboxgroup"></ul>
             </li>
-            <li class="k-state-active">
+            <li>
                 <span class="k-link k-state-selected">Advertisement</span>
                 <ul id="radiogroup"></ul>
             </li>
-            <li class="k-state-active">
+            <li>
                 <span class="k-link">Explanation</span>
             </li>
-            <li class="k-state-active">
+            <li>
                 <span class="k-link">References</span>
             </li>
         </ul>
@@ -91,9 +96,9 @@
                 });
 
 
-                $("#menu").kendoMenu({
-                    dataSource: inlineDefault
-                });
+                //$("#menu").kendoMenu({
+                //    dataSource: inlineDefault
+                //});
 
 
                 // create CheckBoxGroup from ul HTML element
